@@ -1,10 +1,9 @@
 #!/bin/bash
 
-# --- Get User Input ---
 read -p "Enter project name: " input
 PROJECT_DIR="attendance_tracker_${input}"
 
-# --- Cleanup Function for SIGINT ---
+
 handle_interrupt() {
     echo ""
     echo "Interrupt detected! Archiving and cleaning up..."
@@ -15,15 +14,15 @@ handle_interrupt() {
     exit 1
 }
 
-# --- Register the Trap ---
+
 trap 'handle_interrupt' SIGINT
 
-# --- Create Directory Structure ---
+
 echo "Creating project directory structure..."
 mkdir -p "$PROJECT_DIR/Helpers"
 mkdir -p "$PROJECT_DIR/reports"
 
-# --- Copy Source Files ---
+
 # creating attendance_checker.py file
 cat > "$PROJECT_DIR/attendance_checker.py" << 'EOF'
 import csv
@@ -104,7 +103,7 @@ attendance is 46.7%. You will fail this class.
 Davis, your attendance is 26.7%. You will fail this class
 EOF
 
-# --- Dynamic Configuration ---
+
 read -p "Do you want to update attendance thresholds? (y/n): " update_choice
 
 if [ "$update_choice" == "y" ]; then
@@ -119,7 +118,7 @@ else
     echo "Keeping default thresholds: Warning=75%, Failure=50%"
 fi
 
-# --- Environment Validation ---
+
 echo ""
 echo "Running Health Check..."
 
@@ -135,6 +134,7 @@ else
     echo "✗ Something is missing in the project structure."
 fi
 
-# --- Done ---
+
 echo ""
 echo "✓ Project '$PROJECT_DIR' has been set up successfully!"
+
