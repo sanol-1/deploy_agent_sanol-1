@@ -37,4 +37,5 @@ chmod +x setup_project.sh
 ```
 
 Video to walk you through:
-<a href="https://drive.google.com/file/d/1WGWaVeOcTIzP4YPcgormWClSt9F7-XSU/view?usp=sharing" target="_blank"> <b>Video Explaining My Project Here</b></a>
+
+<a href="https://drive.google.com/file/d/1WGWaVeOcTIzP4YPcgormWClSt9F7-XSU/view?usp=sharing" target="_blank"> <b>DEMO VIDEO</b></a>
